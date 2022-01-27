@@ -154,9 +154,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PsyTest.cpp" />
+    <ClCompile Include="Question.cpp" />
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TestSession.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Question.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="TestSession.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
