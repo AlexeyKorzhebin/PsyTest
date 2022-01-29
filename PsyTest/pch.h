@@ -8,5 +8,10 @@
 #define PCH_H
 
 // Добавьте сюда заголовочные файлы для предварительной компиляции
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 #endif //PCH_H

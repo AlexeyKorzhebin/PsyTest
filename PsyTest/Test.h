@@ -1,18 +1,24 @@
 #pragma once
 
+#include "Question.h"
 
-class Test
+class TestModel
 {
 	Questions m_questions;
 	std::wstring m_name;
 	std::wstring m_results_desc;
 
-	void Load(std::wistream& is);
+	friend class FileTestFactory;
 
 public:
-	Test(){}
+	TestModel(){}
 
-	void Load(const std::string&);
-	void Draw( std::wostream&);
+	QuestionsCIter getStart() const { return m_questions.begin(); }
+	QuestionsCIter getEnd() const { return m_questions.end(); }
+
+	auto getGreeting() const { return m_name; }
+	auto getResultsDesc() const { return m_results_desc; }
+
 };
 
+typedef std::shared_ptr<TestModel> TestModelPtr;

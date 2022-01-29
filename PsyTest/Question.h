@@ -1,6 +1,4 @@
 #pragma once
-#include <string>
-#include <vector>
 
 struct Answer
 {
@@ -39,3 +37,5 @@ public:
 };
 
 typedef std::vector<Question> Questions;
+typedef Questions::iterator  QuestionsIter;
+typedef Questions::const_iterator  QuestionsCIter;

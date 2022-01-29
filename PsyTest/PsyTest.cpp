@@ -8,18 +8,34 @@
 #include <sstream>
 #include <fstream>
 #include <codecvt>
-
+#include "FileTestFactory.h"
+//#include <Windows.h>
+#include <locale>
 
 int main()
 {
 	std::locale::global(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));
+	setlocale(LC_ALL, "");
+	
+	std::wcin.imbue(std::locale(".866"));
+	wchar_t  x, y;
+	std::wcout << L"Enter 2 integers:"; 
+	std::wcin >> x >> y; 
+	//std::wcout << L"Sum = " << (x+y) << std::endl;
+	std::wcout << L"Sum = " << x << L" " << y << std::endl;
 
-	//std::locale(std::locale::empty(), new std::codecvt<char16_t, wchar_t, std::mbstate_t>);
-	//SetConsoleOutputCP(CP_UTF8);
-
-	Test test;
+	ITestFactory* p = nullptr;
 	try {
-		test.Load("quiz.txt");
+		// creating a factory object which works with text files 
+		auto p = std::static_pointer_cast<ITestFactory>(std::make_shared<FileTestFactory>());
+		// loading a model instance from a factory object filled with tests
+		auto test_model = p->Create(L"quiz.txt");
+
+		// Creating a test session
+		TestSession session(test_model);
+		// Launching the quiz
+		session.Run();
+
 	}
 	catch (std::exception ex)
 	{
