@@ -12,7 +12,7 @@ void TestSession::Run()
 	for (m_curQuestion = m_model->getStart(); m_curQuestion != m_model->getEnd(); m_curQuestion++)
 	{
 		int count = 1;
-		std::wcout << m_curQuestion->getText().c_str() << std::endl;
+		std::wcout << m_curQuestion->getText() << std::endl;
 
 		auto answers = m_curQuestion->getAnswers();
 		for (auto k : answers)
@@ -22,7 +22,7 @@ void TestSession::Run()
 
 		bool b_mistake = true;
 		do {
-			int ans_score = 0;
+			size_t ans_score = 0;
 			std::wcin >> ans_score;
 
 			// validate input data 
