@@ -22,13 +22,13 @@ void TestSession::Run()
 
 		bool b_mistake = true;
 		do {
-			size_t ans_score = 0;
+			int ans_score = 0;
 			std::wcin >> ans_score;
 
 			// validate input data 
 			// make index to correct answer for the vector
 			ans_score--;
-			if (ans_score >= 0 && ans_score < answers.size())
+			if (ans_score >= 0 && ans_score < static_cast<int>(answers.size()))
 			{
 				m_score += answers.at(ans_score).score;
 				b_mistake = false;
