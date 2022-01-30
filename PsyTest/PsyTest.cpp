@@ -16,13 +16,13 @@ int main()
 {
 	std::locale::global(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));
 	setlocale(LC_ALL, "");
-	
 	std::wcin.imbue(std::locale(".866"));
-	wchar_t  x, y;
-	std::wcout << L"Enter 2 integers:"; 
-	std::wcin >> x >> y; 
-	//std::wcout << L"Sum = " << (x+y) << std::endl;
-	std::wcout << L"Sum = " << x << L" " << y << std::endl;
+
+	//wchar_t  x, y;
+	//std::wcout << L"Enter 2 integers:"; 
+	//std::wcin >> x >> y; 
+	////std::wcout << L"Sum = " << (x+y) << std::endl;
+	//std::wcout << L"Sum = " << x << L" " << y << std::endl;
 
 	ITestFactory* p = nullptr;
 	try {

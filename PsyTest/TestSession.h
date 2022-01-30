@@ -5,18 +5,14 @@ class TestSession
 {
 	TestModelPtr m_model;
 	QuestionsCIter m_curQuestion;
-	int score;
+	int m_score;
 
 
 	// TestSeesion can't be created using the default constructor
-	TestSession() :m_model(), m_curQuestion(), score(0) {}
-
-	void Greeting();
-	void TestDraw();
-	void Result();
+	TestSession() :m_model(), m_curQuestion(), m_score(0) {}
 
 public:
-	TestSession(TestModelPtr p):m_model(p), m_curQuestion(m_model->getStart()), score(0){}
+	TestSession(TestModelPtr p):m_model(p), m_curQuestion(m_model->getStart()), m_score(0){}
 
 	void Run();
 };
