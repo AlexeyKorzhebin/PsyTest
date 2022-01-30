@@ -13,5 +13,6 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <cwctype>
 
 #endif //PCH_H
