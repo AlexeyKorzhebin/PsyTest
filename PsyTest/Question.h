@@ -16,17 +16,15 @@ class Question
 {
 	std::wstring text;
 	Answers answers;
-	int id;
 
 public:
 	
-	Question():text(L""),id(-1){}
-	Question(std::wstring rh_text, Answers rh_answers, int rh_id):text(L""), id(rh_id), answers(rh_answers){}
-	Question(const Question& rh):text(rh.text), answers(rh.answers), id(rh.id) {}
+	Question():text(L""){}
+	Question(std::wstring rh_text, Answers rh_answers, int rh_id):text(L""), answers(rh_answers){}
+	Question(const Question& rh):text(rh.text), answers(rh.answers) {}
 
 	const std::wstring& getText() const { return text; }
 	const Answers& getAnswers() const { return answers; }
-	int getID() const { return id; }
 
 	void setText(std::wstring& t) { text = t; }
 	void addAnswer(const Answer& ans) 

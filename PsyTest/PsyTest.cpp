@@ -18,12 +18,6 @@ int main()
 	setlocale(LC_ALL, "");
 	std::wcin.imbue(std::locale(".866"));
 
-	//wchar_t  x, y;
-	//std::wcout << L"Enter 2 integers:"; 
-	//std::wcin >> x >> y; 
-	////std::wcout << L"Sum = " << (x+y) << std::endl;
-	//std::wcout << L"Sum = " << x << L" " << y << std::endl;
-
 	ITestFactory* p = nullptr;
 	try {
 		// creating a factory object which works with text files 
