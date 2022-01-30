@@ -9,9 +9,6 @@ void TestSession::Run()
 	std::wcout <<  L"Используйте команду \"restart\" или символ r для запуска теста с начала " << std::endl;
 	std::wcout <<  L"Нажмите кнопку Enter для начала теста" << std::endl;
 
-	/*wchar_t key;
-	std::wcin.get(key);
-	*/
 	std::wstring wline;
 	std::getline(std::wcin, wline, L'\n');
 
